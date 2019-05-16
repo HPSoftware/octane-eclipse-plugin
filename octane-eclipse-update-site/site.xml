@@ -3,7 +3,7 @@
    <description name="ALM Octane IDE Integration Update Site" url="http://microfocus.github.io/octane-eclipse-plugin/update-site/">
       Install the latest verison of the ALM Octane IDE Integration
    </description>
-   <feature url="features/octane.eclipse.feature_12.60.47.qualifier.jar" id="octane.eclipse.feature" version="12.60.47.qualifier">
+   <feature url="features/octane.eclipse.feature_12.60.52.qualifier.jar" id="octane.eclipse.feature" version="12.60.52.qualifier">
       <category name="alm.octane"/>
    </feature>
    <category-def name="alm.octane" label="ALM Octane"/>
