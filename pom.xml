@@ -20,7 +20,7 @@
 		<logback.version>1.0.1</logback.version>
 
 		<tycho-version>0.26.0</tycho-version>
-		<octane.common.version>1.6.2</octane.common.version>
+		<octane.common.version>1.6.3-SNAPSHOT</octane.common.version>
 		<java.version>1.8</java.version>
 		<signhp.version>15.0</signhp.version>
 		<maven.compiler.target>1.8</maven.compiler.target>
