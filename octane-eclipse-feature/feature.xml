@@ -33,12 +33,6 @@ limitations under the License.
       <update label="ALM Octane IDE Integration Update Site" url="http://microfocus.github.io/octane-eclipse-plugin/update-site/"/>
    </url>
 
-   <includes
-         id="octane.eclipse.awm.integration.feature"
-         version="0.0.0"
-         name="Integration with AWM"
-         optional="true"/>
-
    <plugin
          id="octane.eclipse.plugin"
          download-size="0"
