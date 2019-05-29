@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Integration with AWM
+Bundle-SymbolicName: octane.eclipse.awm.integration.plugin;singleton:=true
+Bundle-Version: 12.60.52.qualifier
+Bundle-Activator: com.hpe.octane.ideplugins.eclipse.awm.Activator
+Bundle-Vendor: Micro Focus
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.microfocus.awm,
+ octane.eclipse.plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Import-Package: com.hpe.octane.ideplugins.eclipse.integration
+Automatic-Module-Name: octane.eclipse.awm.integration.plugin

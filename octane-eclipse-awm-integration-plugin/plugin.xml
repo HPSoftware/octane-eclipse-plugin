@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.microfocus.awm.model.extension">
+      <functionPackage
+            deprecated="false"
+            id="com.microfocus.awm.sample.octane.functionpackage"
+            label="Octane">
+         <toolType
+               deprecated="false"
+               id="tool.openEntityEditor"
+               label="Open Entity Editor"
+               toolExecutor="com.hpe.octane.ideplugins.eclipse.awm.OpenEntityEditorToolExecutor">
+            <inputParameter
+                  cardinality="1..1"
+                  id="in.entityId"
+                  label="Entity ID"
+                  massProcessing="false"
+                  type="STRING">
+            </inputParameter>
+            <inputParameter
+                  cardinality="1..1"
+                  id="in.entityType"
+                  label="Entity Type"
+                  massProcessing="false"
+                  type="STRING">
+            </inputParameter>
+         </toolType>
+      </functionPackage>
+   </extension>
+
+</plugin>

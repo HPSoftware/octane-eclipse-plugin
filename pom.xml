@@ -12,6 +12,8 @@
 	<modules>
 		<module>octane-eclipse-plugin</module>
 		<module>octane-eclipse-feature</module>
+		<module>octane-eclipse-awm-integration-feature</module>
+		<module>octane-eclipse-awm-integration-plugin</module>
 		<module>octane-eclipse-update-site</module>
 	</modules>
 
@@ -34,6 +36,11 @@
 			<id>neon</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/neon</url>
+		</repository>
+		<repository>
+			<id>awm</id>
+			<layout>p2</layout>
+			<url>file:/C:/Users/atoth/Desktop/awm</url>
 		</repository>
 	</repositories>
 

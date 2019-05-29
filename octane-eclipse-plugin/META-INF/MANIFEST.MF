@@ -56,5 +56,7 @@ Bundle-ClassPath: .,
  lib/sdk-extension-src.jar,
  lib/slf4j-api.jar,
  lib/octane-plugin-common.jar
+Export-Package: com.hpe.adm.octane.ideplugins.services.filtering;x-internal:=true,
+ com.hpe.octane.ideplugins.eclipse.integration;x-internal:=true
 
 
