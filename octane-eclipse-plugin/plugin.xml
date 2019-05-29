@@ -93,11 +93,6 @@
             id="octane-eclipse-plugin.openEntityEditor"
             name="Open Entity Editor">
       </command>
-      <command
-            defaultHandler="com.hpe.octane.ideplugins.eclipse.commands.DummyCommand"
-            id="octane-eclipse-plugin.dummyCommand"
-            name="Dummy Command">
-      </command>
    </extension>
    <extension
          point="org.eclipse.ui.preferencePages">
