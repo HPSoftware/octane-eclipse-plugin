@@ -39,7 +39,6 @@ import org.eclipse.ui.forms.widgets.Section;
 import com.hpe.adm.nga.sdk.metadata.FieldMetadata;
 import com.hpe.adm.nga.sdk.model.ReferenceFieldModel;
 import com.hpe.adm.octane.ideplugins.services.MetadataService;
-import com.hpe.adm.octane.ideplugins.services.exception.ServiceRuntimeException;
 import com.hpe.adm.octane.ideplugins.services.model.EntityModelWrapper;
 import com.hpe.octane.ideplugins.eclipse.Activator;
 import com.hpe.octane.ideplugins.eclipse.preferences.PluginPreferenceStorage;
@@ -157,29 +156,31 @@ public class EntityFieldsComposite extends Composite {
         // Skip the description field because it's in another UI component
         // (below other fields)
         Iterator<String> iterator = shownFields.iterator();
-        
-        //Number of fields that failed to be displayed
+
+        // Number of fields that failed to be displayed
         int skippedFields = 0;
+
+        Collection<FieldMetadata> fieldMetadata = metadataService.getFields(entityModelWrapper.getEntityType());
 
         for (int i = 0; i < shownFields.size(); i++) {
             String fieldName = iterator.next();
 
-//            // Check if the field is valid (exists) before trying to show it
-//            // If the field name for the given type doesn't return any metadata,
-//            // we ignore it
-//            // Default field might be out-dated, and cause detail tab to crash
-            try {
-                metadataService.getMetadata(entityModelWrapper.getEntityType(), fieldName);
-            } catch (ServiceRuntimeException ex) {
+            // Check if the field is valid (exists) before trying to show it
+            // If the field name for the given type doesn't return any metadata,
+            // we ignore it
+            // Default field might be out-dated, and cause detail tab to crash
+            boolean fieldMetadataExists = fieldMetadata
+                    .stream()
+                    .anyMatch(fm -> fm.getName().equals(fieldName));
+            
+            if(!fieldMetadataExists) {
                 ILog log = Activator.getDefault().getLog();
                 StringBuilder sbMessage = new StringBuilder();
                 sbMessage.append("Faied to create fieldEditor for field ")
                         .append(fieldName)
                         .append(" for type ")
-                        .append(entityModelWrapper.getEntityType())
-                        .append(": ")
-                        .append(ex.getMessage());
-
+                        .append(entityModelWrapper.getEntityType());
+                
                 log.log(new Status(IStatus.ERROR, Activator.PLUGIN_ID, sbMessage.toString()));
 
                 // Do not show field in detail tab
@@ -222,7 +223,8 @@ public class EntityFieldsComposite extends Composite {
             fieldEditorControl.setLayoutData(fieldEditorGridData);
             fieldEditorControl.setForeground(foregroundColor);
 
-            // In case of uneven number of fields, the row heights would be inconsistent
+            // In case of uneven number of fields, the row heights would be
+            // inconsistent
             // and Eclipse does not know how to scale correctly
             if (i == shownFields.size() - 1 && (shownFields.size() - skippedFields) % 2 != 0) {
                 Composite placeholderComposite = new Composite(sectionClientRight, SWT.NONE);
