@@ -23,6 +23,7 @@
 		<octane.common.version>1.6.7-SNAPSHOT</octane.common.version>
 		<java.version>1.8</java.version>
 		<signhp.version>15.0</signhp.version>
+		<sign-hp-utility.version>1.0.5</sign-hp-utility.version>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.testTarget>1.8</maven.compiler.testTarget>
@@ -113,6 +114,11 @@
 				<artifactId>tycho-maven-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>SignHPUtility.plugin</groupId>
+				<artifactId>unified-signhp-maven-plugin</artifactId>
+				<version>${sign-hp-utility.version}</version>
 			</plugin>
 		</plugins>
 		<pluginManagement>
