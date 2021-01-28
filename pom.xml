@@ -20,7 +20,7 @@
 		<logback.version>1.0.1</logback.version>
 
 		<tycho-version>0.26.0</tycho-version>
-		<octane.common.version>1.6.7-SNAPSHOT</octane.common.version>
+		<octane.common.version>1.6.6</octane.common.version>
 		<java.version>1.8</java.version>
 		<signhp.version>15.0</signhp.version>
 		<sign-hp-utility.version>1.0.5</sign-hp-utility.version>
