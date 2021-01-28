@@ -39,7 +39,7 @@
 									<goal>signHP</goal>
 								</goals>
 								<configuration>
-									<parameters>-g "${project.build.directory}/Plugin/octane.eclipse.plugin-${project.version}.jar" -t 24 -AUJASProject jar -log "./mfsign_jar.log" -i -c 0 -o ${project.build.directory}</parameters>
+									<parameters>-g "Plugin/${project.build.directory}/octane.eclipse.plugin-${project.version}.jar" -t 24 -AUJASProject jar -log "./mfsign_jar.log" -i -c 0 -o ${project.build.directory}</parameters>
 									<properties>
 										<aujas.client_path>/opt/mfsign/CodeSign-CLI/MicroFocusClient.sh</aujas.client_path>
 										<aujas.guid.jar>22f782ea-080b-46db-b07a-ada0022be69c</aujas.guid.jar>
