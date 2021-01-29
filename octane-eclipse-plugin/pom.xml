@@ -22,12 +22,12 @@
 			<build>
 				<defaultGoal>install</defaultGoal>
 				<plugins>
-					<plugin>
-						<groupId>org.eclipse.tycho</groupId>
-						<artifactId>tycho-packaging-plugin</artifactId>
-						<version>${tycho-version}</version>
-					</plugin>
-					<!-- Has to be after exectuted after the tycho package plugin -->
+					<!--<plugin>-->
+						<!--<groupId>org.eclipse.tycho</groupId>-->
+						<!--<artifactId>tycho-packaging-plugin</artifactId>-->
+						<!--<version>${tycho-version}</version>-->
+					<!--</plugin>-->
+					<!-- Has to be executed after the tycho package plugin -->
 					<plugin>
 						<groupId>SignHPUtility.plugin</groupId>
 						<artifactId>unified-signhp-maven-plugin</artifactId>
