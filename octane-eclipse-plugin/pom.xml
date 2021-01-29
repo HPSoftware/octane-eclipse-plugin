@@ -34,7 +34,7 @@
 						<version>1.0.5</version>
 						<executions>
 							<execution>
-								<phase>prepare-package</phase>
+								<phase>pre-integration-test</phase>
 								<goals>
 									<goal>signHP</goal>
 								</goals>
