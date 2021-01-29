@@ -13,43 +13,43 @@
 	<artifactId>octane.eclipse.feature</artifactId>
 	<packaging>eclipse-feature</packaging>
 
-	<profiles>
-		<profile>
-			<!-- Used for signing built jars -->
-			<id>signhp</id>
-			<build>
-				<defaultGoal>install</defaultGoal>
-				<plugins>
-					<plugin>
-						<groupId>org.eclipse.tycho</groupId>
-						<artifactId>tycho-packaging-plugin</artifactId>
-						<version>${tycho-version}</version>
-					</plugin>
-					<!-- Has to be after exectuted after the tycho package plugin -->
-					<plugin>
-						<groupId>SignHPUtility.plugin</groupId>
-						<artifactId>unified-signhp-maven-plugin</artifactId>
-						<version>1.0.5</version>
-						<executions>
-							<execution>
-								<phase>prepare-package</phase>
-								<goals>
-									<goal>signHP</goal>
-								</goals>
-								<configuration>
-									<parameters>-g "${project.build.directory}/octane.eclipse.feature-${project.version}.jar" -t 24 -AUJASProject jar -log "./mfsign_jar.log" -i -c 0 -o ${project.build.directory}</parameters>
-									<properties>
-										<aujas.client_path>/opt/mfsign/CodeSign-CLI/MicroFocusClient.sh</aujas.client_path>
-										<aujas.guid.jar>22f782ea-080b-46db-b07a-ada0022be69c</aujas.guid.jar>
-										<aujas.project.extensions.jar>jar</aujas.project.extensions.jar>
-									</properties>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+	<!--<profiles>-->
+		<!--<profile>-->
+			<!--&lt;!&ndash; Used for signing built jars &ndash;&gt;-->
+			<!--<id>signhp</id>-->
+			<!--<build>-->
+				<!--<defaultGoal>install</defaultGoal>-->
+				<!--<plugins>-->
+					<!--<plugin>-->
+						<!--<groupId>org.eclipse.tycho</groupId>-->
+						<!--<artifactId>tycho-packaging-plugin</artifactId>-->
+						<!--<version>${tycho-version}</version>-->
+					<!--</plugin>-->
+					<!--&lt;!&ndash; Has to be after exectuted after the tycho package plugin &ndash;&gt;-->
+					<!--<plugin>-->
+						<!--<groupId>SignHPUtility.plugin</groupId>-->
+						<!--<artifactId>unified-signhp-maven-plugin</artifactId>-->
+						<!--<version>1.0.5</version>-->
+						<!--<executions>-->
+							<!--<execution>-->
+								<!--<phase>prepare-package</phase>-->
+								<!--<goals>-->
+									<!--<goal>signHP</goal>-->
+								<!--</goals>-->
+								<!--<configuration>-->
+									<!--<parameters>-g "${project.build.directory}/octane.eclipse.feature-${project.version}.jar" -t 24 -AUJASProject jar -log "./mfsign_jar.log" -i -c 0 -o ${project.build.directory}</parameters>-->
+									<!--<properties>-->
+										<!--<aujas.client_path>/opt/mfsign/CodeSign-CLI/MicroFocusClient.sh</aujas.client_path>-->
+										<!--<aujas.guid.jar>22f782ea-080b-46db-b07a-ada0022be69c</aujas.guid.jar>-->
+										<!--<aujas.project.extensions.jar>jar</aujas.project.extensions.jar>-->
+									<!--</properties>-->
+								<!--</configuration>-->
+							<!--</execution>-->
+						<!--</executions>-->
+					<!--</plugin>-->
+				<!--</plugins>-->
+			<!--</build>-->
+		<!--</profile>-->
+	<!--</profiles>-->
 	
 </project>
