@@ -17,7 +17,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<logback.version>1.0.1</logback.version>
+		<logback.version>1.2.0</logback.version>
 
 		<tycho-version>0.26.0</tycho-version>
 		<octane.common.version>1.6.8-SNAPSHOT</octane.common.version>
